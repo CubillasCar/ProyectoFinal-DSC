@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments/head">
+</head>
+
+
+<body>
+
+<header th:insert="fragments/header">
+</header>
+
+<main>
+    <div class="container-fluid col-12">
+
+        <div class="row">
+
+            <div class="card col-3" style="width: 10rem;">
+                <img src="/static/img/dr.jpg" class="card-img-top"
+                     th:src="@{img/dr.jpg}"/>
+
+            </div>
+
+            <div class="card col-9" th:switch="medicoList">
+                <h3>Lista de Medicos</h3>
+
+                <div th:case="*">
+
+                    <table class="table text-center">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Cmp</th>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Acciones</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each=" medico : ${medicos}">
+                            <th scope="row" th:text="${medico.idMedico}"></th>
+                            <td th:text="${medico.nombres}"></td>
+                            <td th:text="${medico.apellidos}"></td>
+                            <td th:text="${medico.CMP}"></td>
+                            <td th:text="${medico.fotoUrl}"></td>
+
+                            <td class="text-center">
+                                <div class="btn-group">
+
+                                    <a th:href="@{/medicos/edit/{id} (id=${medico.idMedico}) }" class="btn btn-info btn-sm">Editar</a>
+
+                                    <a th:href="@{/medicos/delete/{id} (id=${medico.idMedico}) }" class="btn btn-danger btn-sm">Eliminar</a>
+
+                                </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="col-md-12" align="right">
+                <a th:href="@{/medicos/add}" class="btn btn-primary">Agregar Medicos</a>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

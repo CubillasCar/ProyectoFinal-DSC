@@ -1,0 +1,38 @@
+.list-group-item {
+    width: 95%;
+    margin: 1% !important;
+}
+
+@media (min-width: 576px) {
+    .list-group-item {
+        width: 47%;
+        margin: 5px 1.5% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .list-group-item {
+        width: 31.333%;
+        margin: 5px 1% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .list-group-item {
+        width: 23%;
+        margin: 5px 1% !important;
+    }
+}
+
+.img-container{
+    width:630px;
+    height:380px;
+    overflow:hidden;
+}
+.img-container img{
+    width:100%;
+    height:auto
+}
+img {
+    width: 200px;
+}

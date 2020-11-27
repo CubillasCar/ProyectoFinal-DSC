@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Agregar Paciente</title>
+</head>
+<body>
+
+
+<div class="container col-3">
+    <h3>Agregar Paciente</h3>
+
+    <div>
+
+        <form action="#" method="post"
+              th:object="${pacientes}"
+              th:action="@{/pacientes/add}"
+              enctype="multipart/form-data"
+        >
+
+            <div class="form-group">
+                <input id="id" type="hidden" class="form-control" th:field="*{idPaciente}" th:readonly="true">
+            </div>
+
+            <div class="form-group">
+                <label for="nombres">Nombre</label>
+                <input id="nombres" type="text" class="form-control" placeholder="Ingrese el nombre del paciente" th:field="*{nombres}">
+            </div>
+
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input id="apellidos" type="text" class="form-control" placeholder="Ingrese el nombre del producto" th:field="*{apellidos}">
+            </div>
+
+            <div class="form-group">
+                <label for="dni">Dni</label>
+                <input id="dni" type="text" class="form-control" placeholder="Ingrese el nombre del paciente" th:field="*{dni}">
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input id="direccion" type="text" class="form-control" placeholder="Ingrese la direccion del paciente" th:field="*{direccion}">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input id="telefono" type="text" class="form-control" placeholder="Ingrese el telefono del paciente" th:field="*{telefono}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" class="form-control" placeholder="Ingrese el email del paciente" th:field="*{email}">
+
+            </div>
+
+            <div class="file-field input-field">
+                <div class="btn">
+                    <input type="file" id="imgUrl" name="imgUrl" required>
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">
+                Agregar Paciente
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
