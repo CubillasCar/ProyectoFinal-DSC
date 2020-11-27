@@ -59,7 +59,7 @@ public class AmazonS3PacienteServiceImpl implements AmazonS3PacienteService {
                 s3Foto.putObject(request);
                 log.info("getting URL");
                 response =s3Foto.getUrl(bucketName, filename);
-//                file.delete();
+                file.delete();
 
             }
         }catch (Exception e){
